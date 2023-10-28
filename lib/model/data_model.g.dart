@@ -32,14 +32,11 @@ class StudentModelAdapter extends TypeAdapter<StudentModel> {
       ..write(obj.id)
       ..writeByte(1)
       ..write(obj.name)
-      // ..writeByte(2)
-      // ..write(obj.age)
       ..writeByte(2)
       ..write(obj.phone)
       ..writeByte(3)
       ..write(obj.place);
-      // ..writeByte(4)
-      // ..write(obj.i_mage);
+
   }
 
   @override
