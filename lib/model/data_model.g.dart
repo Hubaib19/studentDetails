@@ -18,11 +18,9 @@ class StudentModelAdapter extends TypeAdapter<StudentModel> {
     };
     return StudentModel(
       name: fields[1] as String,
-      // age: fields[2] as String,
       phone: fields[2] as String,
       place: fields[3] as String,
       id: fields[0] as int?,
-      // i_mage: fields[4] as String,
     );
   }
 
