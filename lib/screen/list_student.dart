@@ -43,9 +43,6 @@ class _ListStudentWidgetState extends State<ListStudentWidget> {
               itemBuilder: (ctx, index) {
                 final data = studentList[index];
                 return GestureDetector(
-                  // onTap: () {
-                  //   Navigator.of(context).push(MaterialPageRoute(builder: (context) => ViewDetails(index: index, name: data.name, phone: data.phone, place: data.place),));
-                  // },
                   child: ListTile(
                       title: Text(data.name),
                       subtitle: Text(data.place),
