@@ -39,7 +39,6 @@ class _ListStudentWidgetState extends State<ListStudentWidget> {
           builder: (BuildContext ctx, List<StudentModel> studentList,
               Widget? child) {
             return ListView.separated(
-
               itemBuilder: (ctx, index) {
                 final data = studentList[index];
                 return GestureDetector(
