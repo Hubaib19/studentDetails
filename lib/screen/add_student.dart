@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors_in_immutables, no_leading_underscores_for_local_identifiers, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:students/db/functions/db_functions.dart';
@@ -16,7 +18,6 @@ class AddStudentWidget extends StatefulWidget {
 class _AddStudentWidgetState extends State<AddStudentWidget> {
   final _nameController = TextEditingController();
 
-  final _ageController = TextEditingController();
 
   final _phonecontrolller = TextEditingController();
 
@@ -32,7 +33,7 @@ class _AddStudentWidgetState extends State<AddStudentWidget> {
     return Scaffold(
       backgroundColor: Colors.deepOrange[50],
       appBar: AppBar(
-        title: Text('Enter details'),
+        title: const Text('Enter details'),
         backgroundColor: Colors.brown[600],
       ),
       body: Form(
@@ -43,7 +44,7 @@ class _AddStudentWidgetState extends State<AddStudentWidget> {
             children: [
               TextFormField(
                 controller: _nameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Enter Name',
                 ),
                 validator: (value) {
@@ -60,9 +61,7 @@ class _AddStudentWidgetState extends State<AddStudentWidget> {
                 inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly],
                 keyboardType: TextInputType.phone,
                 controller: _phonecontrolller,
-                decoration: InputDecoration(
-                  // border:
-                  //     OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+                decoration: const InputDecoration(
                   hintText: 'Enter Number',
                 ),
                 validator: (value) {
@@ -77,9 +76,7 @@ class _AddStudentWidgetState extends State<AddStudentWidget> {
               TextFormField(
                 controller: _placecontroller,
                 keyboardType: TextInputType.name,
-                decoration: InputDecoration(
-                  // border:
-                  //     OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+                decoration: const InputDecoration(
                   hintText: 'Enter Place',
                 ),
                 validator: (value) {
@@ -101,7 +98,7 @@ class _AddStudentWidgetState extends State<AddStudentWidget> {
                   if(_formkey.currentState!.validate()){
                     onAddStudentButtonClicked(context);
 
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ListStudentWidget(),));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListStudentWidget(),));
 
                   }
                   else{
@@ -109,7 +106,7 @@ class _AddStudentWidgetState extends State<AddStudentWidget> {
                   }
 
                 }, 
-                child: Text('Add student',
+                child: const Text('Add student',
                 style: TextStyle(color: Colors.white)
                 ,)),
             ],
@@ -135,6 +132,5 @@ class _AddStudentWidgetState extends State<AddStudentWidget> {
     );
 
     addStudent(_student);
-    print("$_ageController,$_name");
    }
 }

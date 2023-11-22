@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables, camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:students/db/functions/db_functions.dart';
@@ -12,7 +14,7 @@ class Edit extends StatefulWidget {
   dynamic index;
 
   Edit(
-      {required this.index,
+      {super.key, required this.index,
       required this.name,
       required this.phone,
       required this.place});
@@ -60,7 +62,7 @@ class _editState extends State<Edit> {
                             hintText: 'Name',
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         TextField(
@@ -73,7 +75,7 @@ class _editState extends State<Edit> {
                             filled: true,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         TextField(
@@ -83,17 +85,15 @@ class _editState extends State<Edit> {
                             hintText: 'place',
                           ),
                         ),
-                        Container(
-                          child: SizedBox(
-                            height: 20,
-                          ),
+                        const SizedBox(
+                          height: 20,
                         ),
                         ElevatedButton(
                             onPressed: () {
                               updateall(context);
                             },
-                            style: ElevatedButton.styleFrom(primary: Colors.brown[600]),
-                            child: Text('Update')
+                            style: ElevatedButton.styleFrom(backgroundColor: Colors.brown[600]),
+                            child: const Text('Update')
                             ),
                       ]),
                     ),
@@ -121,7 +121,7 @@ class _editState extends State<Edit> {
 
       editstudent(widget.index, updation);
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => ListStudentWidget()));
+          .push(MaterialPageRoute(builder: (context) => const ListStudentWidget()));
     }
   }
 }

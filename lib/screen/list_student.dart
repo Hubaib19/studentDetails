@@ -13,6 +13,7 @@ class ListStudentWidget extends StatefulWidget {
 }
 
 class _ListStudentWidgetState extends State<ListStudentWidget> {
+  @override
   Widget build(BuildContext context) {
     getAllStudents();
     return Scaffold(
@@ -25,7 +26,7 @@ class _ListStudentWidgetState extends State<ListStudentWidget> {
                 builder: (context) => AddStudentWidget(),
               ));
             },
-            icon: Icon(Icons.arrow_back)),
+            icon: const Icon(Icons.arrow_back)),
         actions: [
           IconButton(
               onPressed: () {
@@ -56,7 +57,7 @@ class _ListStudentWidgetState extends State<ListStudentWidget> {
                               Icons.delete,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           IconButton(
@@ -90,8 +91,8 @@ class _ListStudentWidgetState extends State<ListStudentWidget> {
             builder: (context) => AddStudentWidget(),
           ));
         },
-        child: Icon(Icons.add),
         backgroundColor: Colors.brown[600],
+        child: const Icon(Icons.add),
       ),
     );
   }

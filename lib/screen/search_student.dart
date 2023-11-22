@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:students/db/functions/db_functions.dart';
 import '../model/data_model.dart';
@@ -57,31 +59,29 @@ class search extends SearchDelegate {
   }
 
   @override
-  Widget buildSuggestions(BuildContext context) => Container(
-        child: ValueListenableBuilder(
-            valueListenable: studentListNotifier,
-            builder: (BuildContext context, List<StudentModel> studentlist,
-                Widget? child) {
-              return ListView.builder(
-                  itemCount: studentlist.length,
-                  itemBuilder: (BuildContext context, index) {
-                    final data = studentlist[index];
+  Widget buildSuggestions(BuildContext context) => ValueListenableBuilder(
+      valueListenable: studentListNotifier,
+      builder: (BuildContext context, List<StudentModel> studentlist,
+          Widget? child) {
+        return ListView.builder(
+            itemCount: studentlist.length,
+            itemBuilder: (BuildContext context, index) {
+              final data = studentlist[index];
 
-                    if (data.name
-                        .toLowerCase()
-                        .contains(query.toLowerCase().trim())) {
-                      return Column(
-                        children: [
-                          ListTile(
-                            title: Text(data.name),
-                            subtitle: Text(data.place),
-                          ),
-                        ],
-                      );
-                    } else {
-                      return Container();
-                    }
-                  });
-            }),
-      );
+              if (data.name
+                  .toLowerCase()
+                  .contains(query.toLowerCase().trim())) {
+                return Column(
+                  children: [
+                    ListTile(
+                      title: Text(data.name),
+                      subtitle: Text(data.place),
+                    ),
+                  ],
+                );
+              } else {
+                return Container();
+              }
+            });
+      });
 }
