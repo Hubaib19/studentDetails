@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:students/screen/list_student.dart';
+import 'package:students/view/list_student.dart';
 import 'model/data_model.dart';
 
 Future<void> main() async {
