@@ -15,10 +15,10 @@ class StudentModel {
   @HiveField(3)
   final String place;
 
-  StudentModel( 
-      {required this.name,
-      required this.phone,
-      required this.place,
-      this.id,
-      });
+  StudentModel({
+    required this.name,
+    required this.phone,
+    required this.place,
+    this.id,
+  });
 }

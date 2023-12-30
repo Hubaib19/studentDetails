@@ -5,14 +5,9 @@ import 'package:students/view/add_student.dart';
 import 'package:students/view/edit_student.dart';
 import 'package:students/view/search_student.dart';
 
-class ListStudentWidget extends StatefulWidget {
+class ListStudentWidget extends StatelessWidget {
   const ListStudentWidget({super.key});
 
-  @override
-  State<ListStudentWidget> createState() => _ListStudentWidgetState();
-}
-
-class _ListStudentWidgetState extends State<ListStudentWidget> {
   @override
   Widget build(BuildContext context) {
     getAllStudents();

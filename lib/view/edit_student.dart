@@ -14,7 +14,8 @@ class Edit extends StatefulWidget {
   dynamic index;
 
   Edit(
-      {super.key, required this.index,
+      {super.key,
+      required this.index,
       required this.name,
       required this.phone,
       required this.place});
@@ -42,67 +43,69 @@ class _editState extends State<Edit> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.orange[50],
-          body: Container(
-            height: double.infinity,
-            width: double.infinity,
-            color: const Color.fromARGB(255, 255, 255, 255),
-            child: ListView(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: const Color.fromARGB(255, 255, 255, 255),
+        child: ListView(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    const SizedBox(height: 50),
-                    Container(
-                      margin: const EdgeInsets.only(left: 30, right: 30),
-                      child: Column(children: [
-                        TextField(
-                          controller: _nameController,
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            hintText: 'Name',
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        TextField(
-                          inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly],
-                          keyboardType: TextInputType.number,
-                          controller: _phoneController,
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            hintText: 'phone',
-                            filled: true,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        TextField(
-                          controller: _placeController,
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            hintText: 'place',
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        ElevatedButton(
-                            onPressed: () {
-                              updateall(context);
-                            },
-                            style: ElevatedButton.styleFrom(backgroundColor: Colors.brown[600]),
-                            child: const Text('Update')
-                            ),
-                      ]),
+                const SizedBox(height: 50),
+                Container(
+                  margin: const EdgeInsets.only(left: 30, right: 30),
+                  child: Column(children: [
+                    TextField(
+                      controller: _nameController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Name',
+                      ),
                     ),
-                  ],
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    TextField(
+                      inputFormatters: <TextInputFormatter>[
+                        FilteringTextInputFormatter.digitsOnly
+                      ],
+                      keyboardType: TextInputType.number,
+                      controller: _phoneController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'phone',
+                        filled: true,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    TextField(
+                      controller: _placeController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'place',
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    ElevatedButton(
+                        onPressed: () {
+                          updateall(context);
+                        },
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.brown[600]),
+                        child: const Text('Update')),
+                  ]),
                 ),
               ],
             ),
-          ),
-        );
+          ],
+        ),
+      ),
+    );
   }
 
   Future<void> updateall(ctx) async {
@@ -120,8 +123,8 @@ class _editState extends State<Edit> {
       );
 
       editstudent(widget.index, updation);
-      Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => const ListStudentWidget()));
+      Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => const ListStudentWidget()));
     }
   }
 }

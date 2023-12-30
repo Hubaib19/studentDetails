@@ -6,24 +6,14 @@ import 'package:students/db/functions/db_functions.dart';
 import 'package:students/model/data_model.dart';
 import 'package:students/view/list_student.dart';
 
-class AddStudentWidget extends StatefulWidget {
+class AddStudentWidget extends StatelessWidget {
   AddStudentWidget({Key? key}) : super(key: key);
 
-  @override
-  State<AddStudentWidget> createState() => _AddStudentWidgetState();
-}
-
-
-
-class _AddStudentWidgetState extends State<AddStudentWidget> {
   final _nameController = TextEditingController();
-
 
   final _phonecontrolller = TextEditingController();
 
   final _placecontroller = TextEditingController();
-
-  
 
     final _formkey = GlobalKey<FormState>();
 

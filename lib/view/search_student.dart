@@ -32,18 +32,6 @@ class search extends SearchDelegate {
                 return Column(
                   children: [
                     ListTile(
-                      // onTap: () {
-                      //   Navigator.of(context).push(
-                      //     MaterialPageRoute(
-                      //       builder: (ctx) => ViewDetails(
-                      //       index: index,
-                      //       name: data.name,
-                      //       phone: data.phone,
-                      //       place: data.place,
-                      //       ),
-                      //     ),
-                      //   );
-                      // },
                       title: Text(data.name),
                     ),
                     const Divider()
