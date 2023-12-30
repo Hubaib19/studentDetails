@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:students/db/functions/db_functions.dart';
 import 'package:students/model/data_model.dart';
-import 'package:students/screen/list_student.dart';
+import 'package:students/view/list_student.dart';
 
 // ignore: must_be_immutable
 class Edit extends StatefulWidget {
