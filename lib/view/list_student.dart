@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:students/db/functions/db_functions.dart';
 import 'package:students/model/data_model.dart';
-import 'package:students/screen/add_student.dart';
-import 'package:students/screen/edit_student.dart';
-import 'package:students/screen/search_student.dart';
+import 'package:students/view/add_student.dart';
+import 'package:students/view/edit_student.dart';
+import 'package:students/view/search_student.dart';
 
 class ListStudentWidget extends StatefulWidget {
   const ListStudentWidget({super.key});
